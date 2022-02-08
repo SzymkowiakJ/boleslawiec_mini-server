@@ -6,17 +6,19 @@ iframe.muted = true;
 iframe.addEventListener("ended", () => {
 	console.log("video ended");
 	iframe.muted = true;
+	iframe.loop = true;
 	iframe.src = "./public/video/Placeholder_Ekran.mp4";
-	worker.port.postMessage({video: 'end'})
+	worker.port.postMessage({ video: "end" });
 });
 
 worker.port.addEventListener(
 	"message",
 	(e) => {
 		console.log("got msg:", e.data);
-		if(e.data.play && e.data.lang){
-			iframe.muted=false;
-			iframe.src=`./public/video/Film_${e.data.play}_${e.data.lang}_Ekran.mp4`
+		if (e.data.play && e.data.lang) {
+			iframe.muted = false;
+			iframe.loop = false;
+			iframe.src = `./public/video/Film_${e.data.play}_${e.data.lang}_Ekran.mp4`;
 		}
 	},
 	false
