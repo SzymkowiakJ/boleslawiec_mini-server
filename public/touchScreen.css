@@ -76,10 +76,25 @@ body {
 #langDiv {
 	position: absolute;
 	left: 710px;
-	top: 1111px;
+	top: 1091px;
 	display: flex;
 	width: 256px;
 	justify-content: space-between;
+}
+
+#videoControlDiv {
+	position: absolute;
+	left: 110px;
+	top: 1071px;
+	display: flex;
+	width: 156px;
+	justify-content: space-between;
+}
+
+.video-control{
+	width: 75px;
+	height: 75px;
+	/* filter: drop-shadow(0 0 1rem black); */
 }
 
 .flag-img {

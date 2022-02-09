@@ -11,6 +11,9 @@ const langPL = document.getElementById('langPL')
 const langENG = document.getElementById('langENG')
 const langDE = document.getElementById('langDE')
 const interreg = document.getElementById('interreg')
+const stopka = document.getElementById('stopka');
+const vidStopBtn = document.getElementById('vidStop');
+const vidPaPBtn = document.getElementById('vidPaP');
 let lang = 'PL';
 
 const changeLangHandler= (newLang) =>{
@@ -25,6 +28,7 @@ const changeLangHandler= (newLang) =>{
         // labels[5].innerHTML='Wkrótce';
         // labels[6].innerHTML='Wkrótce';
         // labels[7].innerHTML='Wkrótce';
+        stopka.src='./public/images/stopkaPL.png'
         interreg.src='./public/images/interregPL.png'
     };
     if(newLang==='ENG'){
@@ -37,6 +41,7 @@ const changeLangHandler= (newLang) =>{
         // labels[5].innerHTML='Coming soon';
         // labels[6].innerHTML='Coming soon';
         // labels[7].innerHTML='Coming soon';
+        stopka.src='./public/images/stopkaPL.png'
         interreg.src='./public/images/interregPL.png'
     };
     if(newLang==='DE'){
@@ -49,7 +54,8 @@ const changeLangHandler= (newLang) =>{
         // labels[5].innerHTML='Kommt bald';
         // labels[6].innerHTML='Kommt bald';
         // labels[7].innerHTML='Kommt bald';
-        // interreg.src='./public/images/interregDE.png'
+        stopka.src='./public/images/stopkaDE.png'
+        interreg.src='./public/images/interregDE.png'
     };;
 }
 
@@ -97,13 +103,13 @@ const area4ClickedHandler=()=>{
 
 
 clickArea1.addEventListener('click',area1ClickedHandler);
-clickArea2.addEventListener('click', area2ClickedHandler);
-clickArea3.addEventListener('click', area3ClickedHandler);
-clickArea4.addEventListener('click', area4ClickedHandler);
+// clickArea2.addEventListener('click', area2ClickedHandler);
+// clickArea3.addEventListener('click', area3ClickedHandler);
+// clickArea4.addEventListener('click', area4ClickedHandler);
 clickArea1.addEventListener('touchend', area1ClickedHandler);
-clickArea2.addEventListener('touchend', area2ClickedHandler);
-clickArea3.addEventListener('touchend', area3ClickedHandler);
-clickArea4.addEventListener('touchend', area4ClickedHandler);
+// clickArea2.addEventListener('touchend', area2ClickedHandler);
+// clickArea3.addEventListener('touchend', area3ClickedHandler);
+// clickArea4.addEventListener('touchend', area4ClickedHandler);
 
 
 const PLClickedHandler = () =>{
@@ -122,3 +128,17 @@ langENG.addEventListener('touchend',ENGClickedHandler)
 langENG.addEventListener('click',ENGClickedHandler)
 langDE.addEventListener('touchend',DEClickedHandler)
 langDE.addEventListener('click',DEClickedHandler)
+
+const vidStopHandler= () =>{
+    removePulsing();
+    worker.port.postMessage({stop:true});
+}
+
+const vidPaPHandler= () =>{
+    // removePulsing();
+    worker.port.postMessage({pap:true});
+}
+vidStopBtn.addEventListener('touchend', vidStopHandler)
+vidStopBtn.addEventListener('click', vidStopHandler)
+vidPaPBtn.addEventListener('touchend', vidPaPHandler)
+vidPaPBtn.addEventListener('click', vidPaPHandler)
