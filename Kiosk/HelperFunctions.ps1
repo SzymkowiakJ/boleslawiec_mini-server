@@ -57,3 +57,4 @@ function Cockpit-Start($MonitorNum)
     $Helpers::MoveToMonitor($window, $MonitorNum)
     $WinAPI::ShowWindow($window, [Tomin.Tools.KioskMode.Enums.ShowWindowCommands]::Maximize)
 }
+

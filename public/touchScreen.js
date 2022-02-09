@@ -18,38 +18,38 @@ const changeLangHandler= (newLang) =>{
     if(newLang==='PL'){
         lang = newLang;
         labels[0].innerHTML='Wizyta Napoleona w Bolesławcu';
-        labels[1].innerHTML='Bolesławiec twierdzą Napoleona';
-        labels[2].innerHTML='Koniec drogi Kutuzowa';
-        labels[3].innerHTML='Bolesławiec przeciwko Napoleonowi';
-        labels[4].innerHTML='Wkrótce';
-        labels[5].innerHTML='Wkrótce';
-        labels[6].innerHTML='Wkrótce';
-        labels[7].innerHTML='Wkrótce';
+        // labels[1].innerHTML='Bolesławiec twierdzą Napoleona';
+        // labels[2].innerHTML='Koniec drogi Kutuzowa';
+        // labels[3].innerHTML='Bolesławiec przeciwko Napoleonowi';
+        // labels[4].innerHTML='Wkrótce';
+        // labels[5].innerHTML='Wkrótce';
+        // labels[6].innerHTML='Wkrótce';
+        // labels[7].innerHTML='Wkrótce';
         interreg.src='./public/images/interregPL.png'
     };
     if(newLang==='ENG'){
         lang = newLang;
         labels[0].innerHTML="Napoleon's visit to Bolesławiec";
-        labels[1].innerHTML="Bolesławiec as Napoleon's fortress";
-        labels[2].innerHTML="The end of Kutuzov's march";
-        labels[3].innerHTML='Bolesławiec against Napoleon';
-        labels[4].innerHTML='Coming soon';
-        labels[5].innerHTML='Coming soon';
-        labels[6].innerHTML='Coming soon';
-        labels[7].innerHTML='Coming soon';
+        // labels[1].innerHTML="Bolesławiec as Napoleon's fortress";
+        // labels[2].innerHTML="The end of Kutuzov's march";
+        // labels[3].innerHTML='Bolesławiec against Napoleon';
+        // labels[4].innerHTML='Coming soon';
+        // labels[5].innerHTML='Coming soon';
+        // labels[6].innerHTML='Coming soon';
+        // labels[7].innerHTML='Coming soon';
         interreg.src='./public/images/interregPL.png'
     };
     if(newLang==='DE'){
         lang = newLang;
         labels[0].innerHTML='Napoleone in Bunzlau';
-        labels[1].innerHTML='Bunzlau als Festung Napoleons';
-        labels[2].innerHTML='Kutusow am Ende seines Weges';
-        labels[3].innerHTML='Bunzalu gengen Napoleon';
-        labels[4].innerHTML='Kommt bald';
-        labels[5].innerHTML='Kommt bald';
-        labels[6].innerHTML='Kommt bald';
-        labels[7].innerHTML='Kommt bald';
-        interreg.src='./public/images/interregDE.png'
+        // labels[1].innerHTML='Bunzlau als Festung Napoleons';
+        // labels[2].innerHTML='Kutusow am Ende seines Weges';
+        // labels[3].innerHTML='Bunzalu gengen Napoleon';
+        // labels[4].innerHTML='Kommt bald';
+        // labels[5].innerHTML='Kommt bald';
+        // labels[6].innerHTML='Kommt bald';
+        // labels[7].innerHTML='Kommt bald';
+        // interreg.src='./public/images/interregDE.png'
     };;
 }
 
@@ -69,29 +69,30 @@ worker.port.addEventListener("message", (e)=>{
 
 worker.port.start();
 
-const area2ClickedHandler=()=>{
-    console.log('clickArea2 clicked');
-    worker.port.postMessage({play: '02', lang: lang})
-    removePulsing()
-    img2.classList.add('pulsing');
-}
 const area1ClickedHandler=()=>{
     console.log('clickArea1 clicked');
     worker.port.postMessage({play: '01', lang: lang})
     removePulsing()
     img1.classList.add('pulsing');
 }
+const area2ClickedHandler=()=>{
+    console.log('clickArea2 clicked');
+    worker.port.postMessage({play: '02', lang: lang})
+    removePulsing()
+    // img2.classList.add('pulsing');
+}
+
 const area3ClickedHandler=()=>{
     console.log('clickArea3 clicked');
     worker.port.postMessage({play: '03', lang: lang})
     removePulsing()
-    img3.classList.add('pulsing');
+    // img3.classList.add('pulsing');
 }
 const area4ClickedHandler=()=>{
     console.log('clickArea4 clicked');
     worker.port.postMessage({play: '04', lang: lang})
     removePulsing()
-    img4.classList.add('pulsing');
+    // img4.classList.add('pulsing');
 }
 
 
