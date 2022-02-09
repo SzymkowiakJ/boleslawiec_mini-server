@@ -151,6 +151,10 @@ body {
 	}
 }
 
+#divStopka{
+	width:464px
+}
+
 #langENG {
 	display: none;
 }

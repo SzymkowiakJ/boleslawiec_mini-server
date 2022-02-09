@@ -23,7 +23,7 @@ worker.port.addEventListener(
 			iframe.muted = false;
 			iframe.loop = false;
 			iframe.currentTime = 0;
-			iframe.src = `./public/video/Film_${e.data.play}_${e.data.lang}_Ekran.mp4`;
+			iframe.src = `./public/video/${e.data.lang}/Film_${e.data.play}_${e.data.lang}_Ekran.mp4`;
 			placeholder = false;
 		}
 		if (e.data.stop) {

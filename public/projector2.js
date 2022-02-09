@@ -21,7 +21,7 @@ worker.port.addEventListener(
 			iframe.muted = false;
 			iframe.loop = false;
 			iframe.currentTime = 0;
-			iframe.src = `./public/video/Film_${e.data.play}_${e.data.lang}_Makieta.mp4`;
+			iframe.src = `./public/video/${e.data.lang}/Film_${e.data.play}_${e.data.lang}_Makieta.mp4`;
 			placeholder = false;
 		}
 		if (e.data.stop) {
@@ -36,8 +36,6 @@ worker.port.addEventListener(
 		}
 		if(e.data.pap){
 			if(!placeholder){
-console.log("🚀 ~ file: projector2.js ~ line 6 ~ placeholder", placeholder)
-
 				if(paused){
 					iframe.play();
 					paused = false
