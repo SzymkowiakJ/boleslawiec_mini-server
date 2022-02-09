@@ -2,6 +2,8 @@ const worker = new SharedWorker("jsworker.js");
 const iframe = document.getElementById("iframe");
 
 iframe.muted = true;
+let placeholder =true
+let paused = false
 
 iframe.addEventListener("ended", () => {
 	console.log("video ended");
@@ -34,6 +36,8 @@ worker.port.addEventListener(
 		}
 		if(e.data.pap){
 			if(!placeholder){
+console.log("🚀 ~ file: projector2.js ~ line 6 ~ placeholder", placeholder)
+
 				if(paused){
 					iframe.play();
 					paused = false

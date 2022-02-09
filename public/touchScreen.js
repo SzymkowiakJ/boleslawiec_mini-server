@@ -139,6 +139,6 @@ const vidPaPHandler= () =>{
     worker.port.postMessage({pap:true});
 }
 vidStopBtn.addEventListener('touchend', vidStopHandler)
-vidStopBtn.addEventListener('click', vidStopHandler)
+// vidStopBtn.addEventListener('click', vidStopHandler)
 vidPaPBtn.addEventListener('touchend', vidPaPHandler)
-vidPaPBtn.addEventListener('click', vidPaPHandler)
+// vidPaPBtn.addEventListener('click', vidPaPHandler)
